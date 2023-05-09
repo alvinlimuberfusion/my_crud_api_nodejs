@@ -45,7 +45,7 @@ exports.getTask = (req, res) => {
   const id = req.params.id;
   const query = req.query;
   tasksDB
-    .findById({ id: id, title: query.title })
+    .findById({ _id: id, title: query.title })
     .then((data) => {
       if (!data) {
         res.status(404).send({
